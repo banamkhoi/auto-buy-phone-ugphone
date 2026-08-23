@@ -804,14 +804,7 @@
                     background: 'var(--card)', color: 'var(--fg)', confirmButtonColor: 'var(--accent)'
                 });
             }
-            const captcha = (typeof grecaptcha !== 'undefined') ? grecaptcha.getResponse() : '';
-            if (!captcha) {
-                return Swal.fire({
-                    icon: 'warning', title: 'Chưa xác minh Captcha!',
-                    text: 'Vui lòng tích vào reCAPTCHA trước khi chạy.',
-                    background: 'var(--card)', color: 'var(--fg)', confirmButtonColor: 'var(--accent)'
-                });
-            }
+
             const btnRun = document.getElementById('btnRun');
             if (btnRun) btnRun.disabled = true;
             _executeRealBuy(rawJson, captcha);
